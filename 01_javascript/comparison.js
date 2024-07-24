@@ -24,7 +24,13 @@
 // console.log("2"===2)
 // console.log(1==="1")
 
-console.log(null==NaN)
-console.log(null==undefined)
-console.log(null=="null")
-console.log(undefined=="undefined")
+// console.log(null==NaN)
+// console.log(null==undefined)
+// console.log(null=="null")
+// console.log(undefined=="undefined")
+
+console.log(null==true)
+console.log(null==false)
+
+console.log(undefined==true)
+console.log(undefined==false)

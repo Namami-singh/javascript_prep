@@ -34,9 +34,10 @@ let jap="𠮷𠮾"//here as the japanese lang representation moves above the 655
 // console.log(objstr.replace("Hello","Tillu"))
 // console.log(objstr.replace(/He/i,"ki"))//using regex
 
-let newstring= "    hehehe eehheee    "
+let newstring= "    hehehe-eehheee    "
 console.log(newstring.trim());
 console.log(newstring)
 
 console.log(newstring.includes("eehh"));
 console.log(newstring.includes("eehe") );
+console.log(newstring.split("-"));

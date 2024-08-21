@@ -7,8 +7,8 @@ let value=Number(score)
 
 let score1="33"
 let value1=Number(score1)
-//console.log(value1) 
-//console.log(typeof value1)
+// console.log(value1) 
+// console.log(typeof value1)
 
 // "11" => 11
 // "11abc" => NaN
@@ -21,8 +21,8 @@ let tempbool=Boolean(temp)
 
 let num=undefined
 let numstring=String(num)
-//console.log(numstring)
-//console.log(typeof numstring)
+// console.log(numstring)
+// console.log(typeof numstring)
 
 let pos=1
 let neg=-pos

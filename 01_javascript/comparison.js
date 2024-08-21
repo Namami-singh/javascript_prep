@@ -11,14 +11,14 @@
 // console.log(null>=0)//here the null gets converted to 0 
 // console.log(null<=0)//here also the null gets converted to 0 
 
-// console.log(undefined==0)//same reason as nul==0
+// console.log(undefined==0)//same reason as null==0
 // console.log(undefined>=0)//when comparing Undefined to a number it is converted to NaN
 // console.log(undefined<=0)//and any comparison with Nan is false
 
 //type coercion- To perform some operation one of the operator is converted to the same type as the other
 
-// console.log("2">1)//true
-// console.log("02"<1)//true
+console.log("2">1)//true
+console.log("02"<1)//false
 
 //strict check ===(check both value and type)
 // console.log("2"===2)
@@ -29,8 +29,8 @@
 // console.log(null=="null")
 // console.log(undefined=="undefined")
 
-console.log(null==true)
-console.log(null==false)
+// console.log(null==true)
+// console.log(null==false)
 
-console.log(undefined==true)
-console.log(undefined==false)
+// console.log(undefined==true)
+// console.log(undefined==false)

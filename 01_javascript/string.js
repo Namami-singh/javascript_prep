@@ -11,7 +11,7 @@ let name2 = " evans"
 // console.log(str2.indexOf("my",1))
 
 let objstr= new String("Hello There")
-
+//console.log(objstr.substring(0,5))
 // console.log(objstr);
 // console.log(objstr.constructor)
 // console.log(objstr.length)

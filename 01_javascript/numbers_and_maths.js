@@ -18,13 +18,13 @@ let num2=new Number(100000000000)//only with the help of new keyword it becomes 
 
 /******************Maths*******************/
 
-console.log(Math);
-console.log(Math.abs(-4.9555))
-console.log(Math.round(4.95))
-console.log(Math.ceil(4.20))
-console.log(Math.floor(4.9555))
-console.log(Math.min(1,3,4,1))
-console.log(Math.max(1,3,4,0.1))
+// console.log(Math);
+// console.log(Math.abs(-4.9555))
+// console.log(Math.round(4.95))
+// console.log(Math.ceil(4.20))
+// console.log(Math.floor(4.9555))
+// console.log(Math.min(1,3,4,1))
+// console.log(Math.max(1,3,4,0.1))
 
 console.log(Math.random())
 console.log(((Math.random())*10)+1)

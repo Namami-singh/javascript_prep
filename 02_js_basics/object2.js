@@ -1,4 +1,4 @@
-const user= Object()
+const user= new Object()
 // const user={}
 // console.log(user);
 

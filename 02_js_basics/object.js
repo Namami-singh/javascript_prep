@@ -28,11 +28,12 @@ let obj={
 
 obj.greeting=function(){
     console.log("hello greetings from this side!!🌞")
+    return "Explicitly returned"
 }
 obj.personGreeting = function(){
     console.log(`Hello ${this.name} this side`)
 }
 // console.log(obj.greeting)//returns the reference of the function
 console.log(obj.greeting())
-console.log(obj.personGreeting());
+console.log(obj.personGreeting());//as this functions dont explicitly returns anything that is why it implicitly returns undefined and it gets printed
 

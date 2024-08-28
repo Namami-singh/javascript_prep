@@ -18,7 +18,7 @@ const regulerUser={
             lastname:"musk"
         }
     },
-    Companies:["Tesla", "Neurolink"]
+    Companies:["Tesla", "Neuralink"]
 }
 
 // console.log(regulerUser.Name?.fullname.firstname)

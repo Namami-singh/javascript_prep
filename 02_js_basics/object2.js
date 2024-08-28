@@ -2,7 +2,7 @@ const user= new Object()
 // const user={}
 // console.log(user);
 
-user.name="Elon"
+user.name="Elon musk"
 user.age=47
 user.email="elon@tsla.com"
 user.account_type="verified"
@@ -65,3 +65,15 @@ const totalusers=[
 // console.log(Object.entries(totalusers));
 
 console.log(user.hasOwnProperty("powerups"));//to check whether this obj have this particular 
+
+
+//object destructuring 
+//rather than using user.name everytime object can be destructured as below
+
+
+// const {name}=user
+// console.log(name);
+
+const {name:Username} = user   //using alternate name as "Username" for "name" attribute of the object
+console.log(Username);
+

@@ -35,6 +35,7 @@ function countCartPrice(...num1){//rest operator
 // const cartPrice=countCartPrice(1000,300,200,500)
 // console.log(cartPrice)
 
+
 const User={
     Id: 10116765732889,
     subscription: "active"
@@ -45,12 +46,16 @@ function UserSubDefinition(mainobj){
 }
 
 // UserSubDefinition(User)
-UserSubDefinition({Id: 2011676542889,
-    subscription: "Deactive"})
+// UserSubDefinition({Id: 2011676542889,
+//     subscription: "Deactive"})
 
 
-const arr=[10,60,4050,87465]
+
+const arr=[100898,6087483874,4050,87465]
+
 function getElementone(anyarray){
     return anyarray[1]
 }
+
 console.log(getElementone([1,2,3,4]))
+console.log(getElementone(arr));

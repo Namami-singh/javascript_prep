@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>DOM | Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    let div=document.createElement("div")
+    console.log(div);
+    div.className="NewClass"
+    div.id=Math.round(Math.random()*10 +1)
+    div.style.color="green"
+    div.setAttribute("name","division")
+    // div.innerText="Hey darling"
+    let text=document.createTextNode("Wooowwwww....")
+    div.appendChild(text)
+    document.body.appendChild(div)
+    div.style.backgroundColor="white"
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="programming">
+        <li class="lang">Javascript</li>
+    </ul>
+</body>
+<script>
+    //create node
+    function addlang(lang){
+        const li=document.createElement("li")
+        li.innerHTML=lang//tree traversal required
+        document.querySelector(".programming").appendChild(li)
+    }
+    addlang("React")
+    addlang("Typescript")
+
+    function addOptilang(lang){
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(lang))//no tree traversal
+        document.querySelector(".programming").appendChild(li)
+    }
+    addOptilang("C++")
+    addOptilang("golang")
+    addOptilang("Python")
+    addOptilang("Java")
+
+    //edit
+    const ele2nd=document.querySelector("li:nth-child(2)")
+
+
+    // ele2nd.innerText="Rust"
+    //or
+    const editli=document.createElement("li")
+    // editli.textContent="Rust" 
+    editli.appendChild(document.createTextNode("Rust"))
+    ele2nd.replaceWith(editli)
+
+    //edit
+    let firstli=document.querySelector("li:first-child")
+    firstli.outerHTML="<li>Solidity</li>"
+    
+    //remove
+    const lastli=document.querySelector("li:last-child")
+    lastli.remove()
+    
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul class="parent">
+        <!--This is a comment-->
+        <li class="child">Monday</li>
+        <li class="child">Tuesday</li>
+        <li class="child">Wednesday</li>
+        <li class="child">Thursday</li>
+        <li class="child">Friday</li>
+        <li class="child">saturday</li>
+        <li class="child">Sunday</li>
+    </ul>
+</body>
+    <script>
+        const parent1= document.querySelector('.parent')
+        console.log(parent1.children)//gives HTMLollection and includes all element nodes only
+        // console.log(parent1.children[1].innerText)
+        
+        // const allLists=parent1.children
+        // for(list of allLists){
+        //     console.log(list.innerText)
+        // }
+        //Or
+        // for (let i = 0; i < allLists.length; i++) {
+        //     console.log(allLists[i].innerText)
+        // }
+
+        parent1.parentElement.style.color="green";//changes body bgcolor
+        // console.log(parent1.firstElementChild);
+        // console.log(parent1.lastElementChild);
+
+        let lists=document.querySelector(".child")
+        // console.log(lists.nextElementSibling);//next element sibling in dom
+        // console.log(lists.parentElement);//parent element only 
+        // console.log(lists.parentNode);//as node can be an element or other node such as text,commnets etc
+        // console.dir(lists);
+        // console.log(lists.nextSibling);//checks non-element nodes too
+        // console.log(lists.nextSibling.hasChildNodes())
+        // console.log(lists.hasChildNodes())
+
+        console.log(parent1.childNodes);
+        
+    </script>
+</html>

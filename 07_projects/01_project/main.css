@@ -17,9 +17,34 @@ span{
 
 div.main-container{
     text-align: center;
-    margin:35vh auto 35vh;
+    margin-top:35vh;
+    z-index:0;
 }
 h3{
     font-size:x-large;
 
+}
+
+/***************Extras******************/
+/*button and color changing feature*/ 
+
+button{
+    background-color: black;
+    color:white;
+    border-style: inset;
+    width:144px;
+    height:60px;
+    font-size:20px;
+}
+img{
+    /* the z-index is used to provide the cat gif ability to move above the
+     div and relative so that we can move it based on its previous actual position*/
+    display:none;
+    position:relative;
+    z-index:10;
+    top:10;
+}
+
+p.dance-stop-info{
+    font-size:small;
 }

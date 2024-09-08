@@ -1,0 +1,35 @@
+body{
+    margin:0%;
+    background-color: #ada5a5;
+}
+
+form{
+    margin-top:15vh;
+    text-align:center;
+}
+
+form>h3{
+    font-size:xx-large;
+}
+
+div.Info{
+    display:flex;
+    justify-content:center;
+}
+
+p.input{
+    font-weight: bold;
+}
+
+Button{
+    background-color: black;
+    border-radius:10px;
+    color: white;
+    width: 160px;
+    height:40px;
+    font-size: medium;
+}
+
+input{
+    border:2px solid black;
+}

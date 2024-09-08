@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+
+    <form action="#">
+
+        <h3>BMI Calculator</h3>
+
+        <p class="input">
+            <label for="Height">Height<small>(in metres)</small>:</label>
+            <input type="text" id="Height">
+        </p>
+        <p class="input">
+            <label for="Weight">Weight<small>(in Kilograms)</small>:</label>
+            <input type="text" id="Weight">
+        </p>
+        
+        <button type="submit">Calculate</button>
+
+        <div id="result"></div>
+    </form>
+
+    <div class="Info">
+        <div>
+        <h4>The Body Mass Index (BMI) range is categorized as follows:</h4>
+
+        <ul>
+            <li>Underweight: BMI is less than 18.5</li>
+            <li>Normal: BMI is between 18.5 and 24.9</li>
+            <li>Overweight: BMI is between 25 and 29.9</li>
+            <li>Obese: BMI is between 30 and 39.9</li>
+            <li>Severely obese: BMI is 40 or higher</li>
+        </ul>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

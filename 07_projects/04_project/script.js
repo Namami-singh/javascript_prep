@@ -102,6 +102,7 @@ document.getElementById("restart").addEventListener("click",function (e){//creat
     guesses=[];
     prev_attempts.innerText=""; //because vo array empty hone ke baad uss samay show nhi hora
     guess=10;
+    guess_count.innerText=guess;
     inputField.removeAttribute("disabled");
     result_box.removeChild(para);
     display_msg("");

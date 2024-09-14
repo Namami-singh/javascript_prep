@@ -4,7 +4,7 @@ body{
 }
 
 h3{
-    font-size:x-large;
+    font-size:xx-large;
     color:beige;
 }
 
@@ -20,23 +20,50 @@ span{
     font-size:x-large;
     font-weight: 500;
 }
-.alarm-popup{
-    /* display:none; */
-    background-color:beige;
-    display: inline-block;
-    text-align: center;
 
+.alarm-popup{
+    display:none;
+    background-color:beige;
+    /* display: inline-block; */
+    text-align: center;
+    height:50vh;
+    width:30vw;
+    padding:1vw;
+    border-radius:2vw;
+    border:solid 5px black;
+    position:relative;
+    z-index:1;
 }
 
 #time-label{
-    font-size:x-large;
+    font-size:7vh;
 }
 
 #date-time{
-    width:166px;
-    height:44px;
+    width:222px;
+    height:70px;
     border-radius: 10px;
     background-color:coral;
     color:beige;
     border:solid 3px black;
+    margin-top:7vh;
+    font-size:xx-large
+}
+
+.alarm-popup >.cross-icon{
+
+   margin-bottom:5vh;
+   display:flex;
+   justify-content: end;
+
+}
+
+.btn-set{
+    width:7vw;
+    height:5vh;
+    background-color:coral;
+    color:beige;
+    border-radius:5px;
+    font-size: medium;
+    font-weight: 600;
 }

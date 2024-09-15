@@ -66,4 +66,6 @@ span{
     border-radius:5px;
     font-size: medium;
     font-weight: 600;
+    margin-top:10px;
+    border: inset 5px grey;
 }

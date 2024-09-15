@@ -31,7 +31,9 @@ span{
     padding:1vw;
     border-radius:2vw;
     border:solid 5px black;
-    position:relative;
+    position:absolute;
+    top: 35vh;
+    left:35vw;
     z-index:1;
 }
 
@@ -58,7 +60,7 @@ span{
 
 }
 
-.btn-set{
+button{
     width:7vw;
     height:5vh;
     background-color:coral;
@@ -68,4 +70,10 @@ span{
     font-weight: 600;
     margin-top:10px;
     border: inset 5px grey;
+}
+
+#Alarm-record>.head{
+    font-size: x-large;
+    font-weight: 600;
+    margin-bottom: 0%;
 }

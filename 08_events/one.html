@@ -8,28 +8,76 @@
 </head>
 
 <body style="background-color: #212121; color: antiquewhite;">
-
-
-    <h1>Clicks Inventory</h1>
+    
     <ul id="images">
 
-        <li><img src="https://images.pexels.com/photos/20646813/pexels-photo-20646813/free-photo-of-mural-about-gym-on-wall-in-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="streets" width="450px" height="400px"></li>
+        <h1>Clicks Inventory</h1>
 
-        <li><img src="https://images.pexels.com/photos/19553534/pexels-photo-19553534/free-photo-of-still-life-with-teapot.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="teapot" width="450px" height="400px"></li>
+        <li><img src="https://images.pexels.com/photos/20646813/pexels-photo-20646813/free-photo-of-mural-about-gym-on-wall-in-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" id="streets" width="450px" height="400px"></li>
 
-        <li><img src="https://images.pexels.com/photos/28271603/pexels-photo-28271603/free-photo-of-black-and-white-photo-of-a-narrow-canyon.jpeg" alt="" id="canyon" width="450px" height="400px"></li>
+        <li><img src="https://images.pexels.com/photos/19553534/pexels-photo-19553534/free-photo-of-still-life-with-teapot.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" id="teapot" width="450px" height="400px"></li>
 
-        <li><img src="https://images.pexels.com/photos/27034673/pexels-photo-27034673/free-photo-of-a-fox-sitting-behind-the-grass-on-a-meadow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="fox" width="450px" height="400px"></li>
+        <li><img src="https://images.pexels.com/photos/28271603/pexels-photo-28271603/free-photo-of-black-and-white-photo-of-a-narrow-canyon.jpeg" alt="img" id="canyon" width="450px" height="400px"></li>
 
-        <li><img src="https://images.pexels.com/photos/28486840/pexels-photo-28486840/free-photo-of-turkish-coffee-and-tea-on-traditional-tray.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="chai" width="450px" height="400px"></li>
+        <li><img src="https://images.pexels.com/photos/27034673/pexels-photo-27034673/free-photo-of-a-fox-sitting-behind-the-grass-on-a-meadow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" id="fox" width="450px" height="400px"></li>
 
-        <li><img src="https://images.pexels.com/photos/28462495/pexels-photo-28462495/free-photo-of-charming-cottage-with-vibrant-flower-garden.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="cottage" width="450px" height="400px"></li>
+        <!-- <li><img src="https://images.pexels.com/photos/27034673/pexels-photo-27034673/free-photo-of-a-fox-sitting-behind-the-grass-on-a-meadow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" id="fox" width="450px" height="400px" onclick="alert('fox clicked')"></li>  // have event added using HTML attributes(discontinued)-->
+
+        <li><img src="https://images.pexels.com/photos/28486840/pexels-photo-28486840/free-photo-of-turkish-coffee-and-tea-on-traditional-tray.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" id="chai" width="450px" height="400px"></li>
+
+        <li><img src="https://images.pexels.com/photos/28462495/pexels-photo-28462495/free-photo-of-charming-cottage-with-vibrant-flower-garden.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" id="cottage" width="450px" height="400px"></li>
+
+        <li><a href="https://www.google.co.in/" target="_blank" id="link">Google</a></li>
 
     </ul>
 
-
 </body>
+
 <script>
+
+    // document.getElementById('fox').onclick=function(){ //discontinued
+    //     alert('Fox clicked');
+    // }// here used the property of the element to add event
+
+
+    // document.getElementById('fox').addEventListener('click',(e)=>{ //this is the inuse practice to add events 
+    //     alert('fox clicked');
+    // })
+
+
+    //previously attachEvent was used
+    //jquery uses -on 
+
+    // document.getElementById('images').addEventListener('click',function(event){
+    //     console.log('clicked inside the ul');
+    // },false); // false for, event bubbling i.e. it first runs inside element evnt then moves to outer parent element and vice-versa for true
+
+    // document.getElementById('fox').addEventListener('click',function(event){
+    //     console.log('fox clicked');
+    //     // event.stopPropagation();// to stop the propagation
+    // },false);
+
+    //mostly parent element pe hi propagation depend krta hai if parent is true and child is false then evnt capturing hoga naki bubbling as true for capturing and false for bubbling, and default false hi hai and in industry false is only mostly used
+
+    document.querySelector('a').addEventListener('click',function(e){
+        console.log('google link prevented');
+        e.preventDefault();
+    });
+
+    document.getElementById('images').addEventListener('click',function(e){
+        
+        console.log(e.target.tagName);
+        
+        if(e.target.tagName=='IMG' || e.target.tagName=='A')
+        {
+            console.log(e.target.id);
+            let removeIt=e.target.parentNode;//targeting the parent as removing image does not remove the bullet points
+            removeIt.remove(); //new method to remove elements very newly introduced
+        }
+    },false)
     
+    // removeIt.parentNode.removeChild(removeIt); //have been used for a long time now in industry
+
 </script>
+
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p> Mouse positions according to screen and client</p>
+        <p><span id="position-log"></span></p>
+    </div>
+
+    <table class="no-markdown">
+
+        <thead>
+          <tr>Some of the mouse events that explains the target and related target concept</tr>
+          <tr>
+            <th>Event name</th>
+            <th><code>target</code></th>
+            <th><code>relatedTarget</code></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="/en-US/docs/Web/API/Element/mouseenter_event" title="mouseenter"><code>mouseenter</code></a></td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device entered to</td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device exited from</td>
+          </tr>
+          <tr>
+            <td><a href="/en-US/docs/Web/API/Element/mouseleave_event" title="mouseleave"><code>mouseleave</code></a></td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device exited from</td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device entered to</td>
+          </tr>
+          <tr>
+            <td><a href="/en-US/docs/Web/API/Element/mouseout_event" title="mouseout"><code>mouseout</code></a></td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device exited from</td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device entered to</td>
+          </tr>
+          <tr>
+            <td><a href="/en-US/docs/Web/API/Element/mouseover_event" title="mouseover"><code>mouseover</code></a></td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device entered to</td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device exited from</td>
+          </tr>
+          <tr>
+            <td><a href="/en-US/docs/Web/API/HTMLElement/dragenter_event" title="dragenter"><code>dragenter</code></a></td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device entered to</td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device exited from</td>
+          </tr>
+          <tr>
+            <td><a href="/en-US/docs/Web/API/HTMLElement/dragleave_event" title="dragleave"><code>dragleave</code></a></td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device exited from</td>
+            <td>The <a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a> the pointing device entered to</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+</body>
+
+<script>
+    let logs=document.getElementById('position-log');
+
+    document.addEventListener('mousemove',function(e){
+        logs.innerHTML=`Screen X/Y:${e.screenX} ,${e.screenY}
+                        </br>
+                        Client X/Y:${e.clientX} ,${e.clientY}`;
+
+        console.log(e.type);// gives type of evnt
+        console.log((e.timeStamp)/1000);//time in miliseconds since epoch that may be the time when event was created or july 1970 
+        // but here it is the time event was created
+        console.log(e.defaultPrevented);// T/F tells that rather default is prevented or not
+        console.log(e.srcElement);//degraded version of target
+        console.log(e.target);
+        console.log(e.relatedTarget);//the value of target and related target value change with type of event  degraded ver=rsion-fromElement
+        console.log(e.toElement);//degraded version of target only 
+        console.log(e.currentTarget);//may be used in event propagtion to identify the taregt being handled at present
+        
+    })
+
+    //screenX/Y is of the whole screen and clientX/Y is of the visible document part to the client 
+    // altkey, ctrlkey, shiftkey all tell rither these are pressed or not as true or false
+    //keyCode is the code of the particular key in ASCII to identify key we use this but know directly e.key can be used to get the key 
+
+</script>
+</html>

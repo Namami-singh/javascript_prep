@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async Web_api>dom_api </title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="timestop">Stop load timeout</button>
+    <p id="timeout"></p>
+    <p id="Interval"></p>
+</body>
+<script>
+
+    //setTimeout------perform task only once after the time period 
+
+    window.addEventListener('load',function(e){
+
+        let para=document.querySelector('p[id="timeout"]');
+
+        const loadTimeout=setTimeout(function(){
+            para.innerHTML="Timeout Over";
+        },5000)
+
+        ToClearLoadTimeout(loadTimeout,para);
+    })
+
+
+    function ToClearLoadTimeout(timeout,para){
+        document.getElementById('timestop').addEventListener('click',function(e) {
+            para.innerHTML="Timeout cleared";
+            clearTimeout(timeout);
+        })
+    }
+
+
+    //setInterval-----perform tasks periodically after some desired time period continously 
+
+    //Start button
+    let setDuration
+    document.getElementById('start').addEventListener('mousedown',function(e){
+        if(!setDuration)setDuration=setInterval(showTime,1000,'milliseconds from 1970 july') 
+        //check to make sure, indeed it should be null or undefined to set a new interval as they are falsy values 
+        // and !false=true
+    })
+
+    let para
+    function showTime(arg){
+        para=document.querySelector('p[id="Interval"]');
+        para.innerHTML=`${arg} ${Date.now()}`;
+    }
+
+    //stop button
+    document.getElementById('stop').addEventListener('click',function(e){
+
+        if(setDuration){ // to make sure that the interval exist which we are trying to clear
+            clearInterval(setDuration);
+            setDuration=null;// industry practices to make it a solid code
+            para.innerHTML="";
+        }
+
+    })
+
+</script>
+</html>

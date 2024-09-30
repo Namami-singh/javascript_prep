@@ -1,0 +1,17 @@
+body{
+    background-color: cadetblue;
+    color:antiquewhite;
+    text-align: center;
+}
+
+.start{
+    margin-top:10vh;
+}
+
+button{
+    width:10vw;
+    height:5vh;
+    border-radius: 5px;
+    font-size:large;
+    background-color: cornsilk;
+}

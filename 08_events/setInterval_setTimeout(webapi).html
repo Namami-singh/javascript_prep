@@ -43,7 +43,7 @@
     let setDuration
     document.getElementById('start').addEventListener('mousedown',function(e){
         if(!setDuration)setDuration=setInterval(showTime,1000,'milliseconds from 1970 july') 
-        //check to make sure, indeed it should be null or undefined to set a new interval as they are falsy values 
+        //check to make sure, indeed it should be null or undefined to set a new interval as they are falsy values(referring to null and undefined)
         // and !false=true
     })
 

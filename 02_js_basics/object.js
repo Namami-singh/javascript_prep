@@ -23,8 +23,8 @@ let obj={
 // obj.present=true
 // console.log(obj.Present)
 
-// obj[sym]=20 n        //overwrting symbol key in the object
-// console.log(obj[sym])
+// obj[sym]=20n        //overwrting symbol key in the object
+// console.log(typeof obj[sym])
 
 obj.greeting=function(){
     console.log("hello greetings from this side!!🌞")

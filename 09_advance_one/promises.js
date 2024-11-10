@@ -5,7 +5,9 @@ const promise1= new Promise(function(resolve,reject){
 
 })
 
-//
+
+
+//----------------------------------------------------------//
 const promise2= new Promise(function(resolve,reject){
     setTimeout(function () {
         resolve("timeout over");
@@ -17,7 +19,9 @@ promise2.then((msg)=>{
     console.log(msg);
 })
 
-//
+
+//----------------------------------------------------------//
+
 new Promise((accept,reject)=>{
     let error=false;
     if(!error)accept("no errors");
@@ -35,7 +39,9 @@ function onreject(msg)
     
 }
 
-//
+
+//----------------------------------------------------------//
+
 let cleanupmsg="cleaned up";
 
 new Promise((accept,reject)=>{      
@@ -60,7 +66,8 @@ function cleanup(msg) {
 }
 
 
-//
+//----------------------------------------------------------//
+
 const promisenew= new Promise((resolve,reject)=>{
     let error=false;
     let obj={username:"Lmfao" , password: "kuch to hai"}
@@ -68,6 +75,8 @@ const promisenew= new Promise((resolve,reject)=>{
     else reject("error");
 })
 //js priortize then in its event loop over any finally present in there
+//So, finally seems delayed because JavaScript prioritizes resolving all 
+//then handlers across promises before cleaning up with finally.
 promisenew.then((user)=>{
     console.log(`The beautiful name of the user is ${user["username"]}`)
     return user.password;
@@ -77,7 +86,8 @@ promisenew.then((user)=>{
 });
 
 
-//
+//----------------------------------------------------------//
+
 const promise_async =new Promise((resolve,reject)=>//this section is interesting run it and try it 
 {
     setTimeout(()=>{
@@ -108,4 +118,49 @@ setTimeout is asynchronous, meaning it schedules a function to run in the future
 The try...catch block executes synchronously, so it finishes before the setTimeout callback is called.
  */
 
-fetch("www.youtube.com")
+//----------------------------------------------------------//
+
+fetch("https://randomuser.me/api/")
+.then((response)=>{
+    return response.json();
+}).then((result1)=>{
+    console.log(result1);
+    console.log(result1.results[0].name.first);
+    console.log(result1.results[0].email);
+    console.log(result1.results[0].phone);
+})
+
+
+//----------------------------------------------------------//
+
+async function randomuser(url){
+    try{
+        let response= await fetch(url);//await stops the execution of the aync function until the promise gets resolves 
+        let result= await response.json();
+        console.log(result.results[0].name.first);
+    }
+    catch(error){
+        console.log(`Some error occured ${error}`);
+    }
+}
+
+randomuser("https://randomuser.me/api/");
+
+
+//----------------------------------------------------------//
+
+ // and yes async function also returns a promise so it can also be done as.. 
+
+ async function fetchuser(url){
+    let response= await fetch(url);
+    let result= await response.json();
+    return result;
+ }
+
+ fetchuser("https://randomuser.me/api/")
+ .then((response)=>{
+    console.log(`So the name of the user is : ${response.results[0].name.first}`);
+ })
+ .catch((error)=>{
+    console.log(`Its an error: ${error}`);
+ })

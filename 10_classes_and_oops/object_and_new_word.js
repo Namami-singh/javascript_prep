@@ -105,7 +105,8 @@ let multi=new multiplyBy5(5);
 
 
 
-
+//use this convo link to clear doubts (I had a talk with gpt to clear some of my doubts)-
+//https://chatgpt.com/share/67373d95-ae10-8012-8445-98c50d994b86
 
 
 

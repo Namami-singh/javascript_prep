@@ -14,6 +14,9 @@ const user={
 // and if we write a method inside it that sets the variables then we need the object for it and we cannot create different
 ///instances of it and only this literal object can be used.
 
+// let user1=new user;    //this cannot happen because user is not a constructor function and new needs a constructor to make objects
+// console.log(user1);
+
 // console.log(user.getUserDetails());
 // console.log(this);//global scope
 
@@ -42,14 +45,15 @@ console.log(UserOne);
 const UserOne = new User("hiteshSir",8,true);
 const UserTwo= new User("ChaiAurCode",6,true);
 
-// console.log(User);//it is a constructor function 
+// console.log(User);
 
 // console.log(UserOne);
 // console.log(UserTwo);
 
-// console.log(UserOne.constructor);
+// console.log(UserOne.constructor);// gives user function as it is the function used to make this object
 
-console.log(UserOne instanceof Object);
+console.log(UserOne instanceof Object); // as everything in js is at the end an object as array,string or 
+// even a function is an object or inherits an objects functionality
 console.log(UserOne instanceof User);
 
 

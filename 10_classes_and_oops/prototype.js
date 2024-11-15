@@ -61,6 +61,4 @@ String.prototype.trueLength=function(){
 let chai="ChaiAurCodeeeee   "
 
 chai.trueLength()
-"  Hello   ".trueLength()
-" Chai  ".trueLength()
 "  Codeiiii  ".trueLength()

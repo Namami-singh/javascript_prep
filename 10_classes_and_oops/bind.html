@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body>
+    <button id="button">Button</button>
+</body>
+<script>
+    class React{
+        constructor(buttonId){
+            this.library="react"
+            this.server="http://localhost:5505/"
+
+
+            document.getElementById(buttonId).addEventListener('click',this.handleclick.bind(this))//in this line we add the objects handleclick() method
+            // as a callback here this is the current object not the button element as the one that initiates become this 
+            //now the constructor is running the callback function is not initiated yet i.e., why this is the object 
+
+
+            //in JavaScript, the bind method does not overwrite the original this value; instead, it creates a new function where the this keyword is 
+            //explicitly set to the provided value when the new function is called. 
+        }
+
+        handleclick(){
+            console.log(`button clicked`);
+            console.log(this);
+            console.log(this.server);
+        }
+    }
+
+    const app = new React('button')
+</script>
+</html>

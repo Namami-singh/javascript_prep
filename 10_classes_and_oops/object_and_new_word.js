@@ -2,7 +2,7 @@ function multiplyBy5(num){
     return num*5;
 }
 
-multiplyBy5.power=2//added as property
+multiplyBy5.power=2//added as property to functions object 
 
 // console.log(multiplyBy5(5));
 // console.log(multiplyBy5.power);
@@ -97,7 +97,7 @@ let multi=new multiplyBy5(5);
 // console.log(multi.power);  
 //undefined//Reason-When you add a property to a function, it’s stored directly on the function
 // object itself,not on its .prototype. Properties added to a function are not inherited by objects created with new.
-//either to make it add properrty to .prototype or inside constructor function
+//either to make it visible add property to .prototype or inside constructor function
 
 
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiaurCode</title>
+</head>
+<body bgcolor="#212121">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function outer(){
+    //     let user="chaiaurcode"
+    //     function inner(){//the reason why inner function have access to user is because of lexical scoping
+    //         console.log(user);//lexical scoping makes the outer functions scope available to inner()
+    //     }
+    //     inner()
+    // }
+    // outer()
+
+
+    // function outer(){
+    //     let user="chaiaurcode"
+    //     function inner(){//the reason why inner function have access to user is because of lexical scoping
+    //         console.log(user);//lexical scoping makes the outer functions scope available to inner()
+    //     }
+    //     return inner;
+    // }
+    // //because of closure property the the inner function along with the scope of outer function is passed or returned
+    // let funcnref= outer()
+    // funcnref()
+
+
+
+
+    // document.getElementById("orange").onclick=function(){
+    //         document.body.style.backgroundColor='orange';
+    //     }
+    // document.getElementById("green").onclick=function(){
+    //         document.body.style.backgroundColor='green';
+    //     }
+
+
+    //use of closure
+
+    // document.getElementById("orange").onclick=colorClickHandler //reference nhi leta directly executable function dena hai
+    // document.getElementById("orange").onclick=colorClickHandler("orange")//isko krne se aur direcly waha se color set krne se without 
+    //returning the function it will directly run and not letting it be handled by buttons
+
+
+    document.getElementById("orange").onclick=colorClickHandler("orange")
+    document.getElementById("green").onclick=colorClickHandler("green")
+
+    function colorClickHandler(color){
+        // document.body.style.backgroundColor=`${color}`;
+
+        return function(){
+            document.body.style.backgroundColor=`${color}`;
+        }
+    }
+
+</script>
+</html>

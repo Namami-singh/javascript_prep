@@ -62,3 +62,102 @@
 
 </script>
 </html>
+
+<!-- 
+Internally, **lexical scoping** and **closures** in JavaScript are managed by the creation and maintenance of the **execution context** and **scope chain** during runtime.
+
+### **How Lexical Scoping Works**
+1. **Parsing the Code:**  
+   When JavaScript parses the code, it determines variable scopes based on the structure of the code, *not* runtime execution. Variables defined in outer scopes are attached to their corresponding scopes.
+
+2. **Scope Chain Construction:**  
+   Each execution context (e.g., for a function) has a reference to its **lexical environment**, which stores variables declared in that function.  
+   - If a variable is not found in the current environment, JavaScript searches the outer environment (from inner to outer scopes).
+
+### **How Closures Work**
+1. **Preserving Outer Variables:**  
+   When a function is created, it "remembers" its **outer lexical environment** because the function carries a reference to the environment where it was declared.
+
+2. **Heap Memory Allocation:**  
+   Variables in the outer function (used by the inner function) are kept alive in the heap memory, even after the outer function finishes execution, because the inner function still references them.
+
+3. **Garbage Collection Protection:**  
+   Normally, unused variables are garbage collected. However, closures prevent this by keeping the referenced variables in memory until the closure itself is no longer accessible.
+
+**Example Breakdown:**
+```javascript
+function outer() {
+  let count = 0; // Stored in the outer environment
+  return function inner() {
+    count++; // Accesses 'count' from the outer environment
+    console.log(count);
+  };
+}
+
+const closure = outer(); // 'count' stays in memory
+closure(); // Execution accesses 'count' via scope chain
+```
+
+Here’s what happens internally:
+1. **outer()** executes and creates a lexical environment with `count`.
+2. The `inner` function is returned with a reference to this environment.
+3. The closure ensures `count` is preserved in memory since it’s referenced by `inner`.
+
+This mechanism enables closures to "remember" variables and maintain state. 
+-->
+
+
+
+
+
+
+<!-- 
+A **Lexical Environment** in JavaScript is a data structure that holds **variable bindings** (identifiers and their values) and determines how variables are resolved during execution.
+
+### **Components of a Lexical Environment**
+1. **Environment Record:**  
+   A storage for all the local variables, functions, and constants defined in a specific block or function.
+
+2. **Outer Lexical Environment Reference:**  
+   A reference to the parent (outer) lexical environment, forming the **scope chain**.
+
+### **Types of Lexical Environments**
+1. **Global Lexical Environment:**  
+   The top-level environment created when the script starts. Variables and functions declared at the global level are stored here.
+
+2. **Function Lexical Environment:**  
+   Created when a function is invoked. It contains the function's local variables and arguments.
+
+3. **Block Lexical Environment:**  
+   Created for blocks (`{}`) when `let`, `const`, or `class` is used.
+
+### **Example Breakdown**
+```javascript
+let globalVar = "I am global!"; // Global Lexical Environment
+
+function outer() {
+  let outerVar = "I am outer!"; // Outer Lexical Environment
+
+  function inner() {
+    let innerVar = "I am inner!"; // Inner Lexical Environment
+    console.log(globalVar); // Found in global environment
+    console.log(outerVar); // Found in outer environment
+  }
+
+  inner();
+}
+
+outer();
+```
+
+#### **How Lexical Environments Work Internally**
+- **`outer()` call:**  
+  A new lexical environment is created for `outer()`, which contains `outerVar` and a reference to the global lexical environment.
+
+- **`inner()` call:**  
+  A new lexical environment for `inner()` is created, which contains `innerVar` and references the `outer()` environment.
+
+When resolving variables, JavaScript searches the current environment first and then follows the **outer lexical environment reference** until it finds the variable or throws a `ReferenceError`. 
+
+This mechanism is the backbone of JavaScript's **scoping** and **closures**.
+ -->
